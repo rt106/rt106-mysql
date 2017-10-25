@@ -1,5 +1,6 @@
 ## rt106-MySQL
 
+__Copyright (c) General Electric Company, 2017.  All rights reserved.__
 
 This git project has the setup and initialization files for the Rt 106 MySQL database.
 
