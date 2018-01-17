@@ -1,5 +1,8 @@
 ## rt106-MySQL
 
+
+[![CircleCI](https://circleci.com/gh/rt106/rt106-mysql.svg?style=svg)](https://circleci.com/gh/rt106/rt106-mysql)
+
 __Copyright (c) General Electric Company, 2017.  All rights reserved.__
 
 This git project has the setup and initialization files for the Rt 106 MySQL database.
@@ -8,7 +11,7 @@ This database is initially used for logging messages, execution records,
 user feedback on algorithms, information on connected clients, and health status of
 system components.  In the future, other metadata may be stored here.
 
-### Create the Rt106 MySQL Docker image 
+### Create the Rt106 MySQL Docker image
 To create the Rt106 MySQL Docker image, run this command:
 ```
 docker build -t rt106/rt106-mysql --build-arg http_proxy=$http_proxy --build-arg https_proxy=$https_proxy --build-arg no_proxy=$no_proxy .
@@ -125,4 +128,3 @@ DELETE FROM execution_log WHERE JSON_EXTRACT(message_json,"$.header.executionId"
 
 Deleting based on other fields can be tricky, in that the request / response / execution should ideally be deleted together, but not all of these messages contain all fields.
 For example, response messages do not contain analytic ID.
-
